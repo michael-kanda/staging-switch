@@ -1,0 +1,18 @@
+.sws-box .sws-wide{display:block;width:100%;text-align:center;margin-bottom:6px;box-sizing:border-box}
+.sws-box .sws-note{background:#fcf9e8;border-left:4px solid #dba617;padding:8px 10px;margin:0 0 12px}
+.sws-box .sws-danger{color:#b32d2e;border-color:#b32d2e}
+.sws-box .sws-log{margin:0;font-size:12px;color:#50575e}
+.sws-dialog{border:0;border-radius:8px;padding:20px 24px;max-width:420px;width:90%;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.sws-dialog::backdrop{background:rgba(0,0,0,.45)}
+.sws-dialog h2{margin:0 0 8px;font-size:16px}
+.sws-d-text{margin:0 0 10px;color:#50575e}
+.sws-d-list{margin:0 0 16px;padding-left:18px;list-style:disc}
+.sws-d-actions{display:flex;gap:8px;justify-content:flex-end}
+.sws-d-danger{background:#b32d2e!important;border-color:#b32d2e!important}
+.column-title .row-actions .sws_link a{cursor:copy}
+.sws-badge{display:inline-block;padding:1px 8px;border-radius:3px;font-size:11px;font-weight:600;letter-spacing:.04em;line-height:1.6;vertical-align:middle}
+.sws-badge-live{background:#00a32a;color:#fff}
+.sws-badge-staging{background:#dba617;color:#1d2327}
+.wp-list-table.striped>tbody>tr.sws-row-live,.wp-list-table tr.sws-row-live{background:#eaf6ec}
+.wp-list-table.striped>tbody>tr.sws-row-staging,.wp-list-table tr.sws-row-staging{background:#fcf9e8}
+.sws-indent td.column-title>strong:before{content:"— ";color:#8c8f94}

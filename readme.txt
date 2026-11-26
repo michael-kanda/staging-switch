@@ -4,7 +4,7 @@ Tags: staging, preview, approval, noindex, workflow
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Create a staging copy of any page or post, keep it noindex, share it with client
 * The live page is marked with a green LIVE badge in the list and in the editor.
 
 == Changelog ==
+
+= 1.0.4 =
+* Fix: "Go live" failed with "No staging available" when the live post had lost its link to the staging copy. The link is now restored automatically from the staging copy's back-reference.
 
 = 1.0.3 =
 * Posts list: staging is shown directly below its live post, indented.

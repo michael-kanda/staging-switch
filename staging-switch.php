@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Staging Switch
  * Description:       Staging-Duplikat für jede Seite oder jeden Beitrag. Staging ist immer noindex/nofollow, per geheimem Link freigebbar und mit einem Klick live schaltbar.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Author:            Michael Kanda
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SWS_VERSION', '1.0.3' );
+define( 'SWS_VERSION', '1.0.4' );
 define( 'SWS_FILE', __FILE__ );
 define( 'SWS_URL', plugin_dir_url( __FILE__ ) );
 

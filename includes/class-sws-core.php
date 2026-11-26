@@ -39,8 +39,29 @@ final class SWS_Core {
 	}
 
 	public static function staging_id( $live_id ) {
-		$sid = (int) get_post_meta( $live_id, self::META_STAGING, true );
-		return ( $sid && get_post_status( $sid ) ) ? $sid : 0;
+		global $wpdb;
+		$live_id = (int) $live_id;
+		$sid     = (int) get_post_meta( $live_id, self::META_STAGING, true );
+		if ( $sid && get_post_status( $sid ) ) {
+			return $sid;
+		}
+		if ( $live_id <= 0 ) {
+			return 0;
+		}
+
+		// Selbstheilung: Fehlt der Verweis am Live-Beitrag, über den Rückverweis des Staging suchen und neu setzen.
+		$found = (int) $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$wpdb->prepare(
+				"SELECT pm.post_id FROM {$wpdb->postmeta} pm INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id WHERE pm.meta_key = %s AND pm.meta_value = %s AND p.post_status NOT IN ('trash','auto-draft') ORDER BY pm.post_id DESC LIMIT 1",
+				self::META_LIVE,
+				(string) $live_id
+			)
+		);
+		if ( $found && $found !== $live_id ) {
+			update_post_meta( $live_id, self::META_STAGING, $found );
+			return $found;
+		}
+		return 0;
 	}
 
 	/**
